@@ -13,7 +13,7 @@ export const createHotel = async (req, res, next) => {
 
 export const updateHotel = async (req, res, next) => {
   try {
-    await Hotel.findByIdAndDelete(
+    const updatedHotel = await Hotel.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
       { new: true }
